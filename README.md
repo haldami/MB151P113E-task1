@@ -1,3 +1,18 @@
+# README
+
+## Apology
+I could not upload all the files (either downloaded or produced), due to their quite a large size. Therefore I uploaded only file `data/snps.vcf`, which contains the very result of the pipeline. This file was then uploaded to the VEP tool and processed. The pipeline is described to every detail, so, if the tools are installed correctly, there should be no problem in the pipeline replication.
+
+## Tools
+The pipeline was run on a machine with Linux Mint v22.
+
+Please see list of genomics tools used in the pipeline here:
+- `bwa` v0.7.17-r1188
+- `samtools` v1.19.2
+- `bcftools` v1.19
+
+## Task solution (pipeline description)
+
 Download files using `curl` to a new `in/` folder:
 ```sh
 mkdir -p in
@@ -39,5 +54,7 @@ bcftools view -v snps data/calls.vcf > data/snps.vcf
 
 The file `data/snps.vcf` was uploaded to the [VEP tool](https://www.ensembl.org/Multi/Tools/VEP?db=core). A query was run with Ensembl/GENCODE transcripts with no additional configurations. A [link to the job results](https://www.ensembl.org/Homo_sapiens/Tools/VEP/Results?tl=wMnPqmM6wvtGxgXt-10762971).
 
+
+## Question - answer
 Answer to the excercise 1:  
 My opinion is the option "chr7, 2915243, G, A", because it leads into a stop codon in a gene for [caspase recruitment domain family member 11](https://www.ensembl.org/Homo_sapiens/Transcript/ProteinSummary?db=core;g=ENSG00000198286;r=7:2915193-2915293;t=ENST00000396946;tl=wMnPqmM6wvtGxgXt-10762971). That I can imagine to lead to some disease, because the modified gene produces shorthened and highly possibly malfunctional proteins.
